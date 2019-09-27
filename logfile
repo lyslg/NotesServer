@@ -1,0 +1,16 @@
+2019-09-04 21:48:15.792 KST [71138] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2019-09-04 21:48:15.792 KST [71138] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2019-09-04 21:48:15.792 KST [71138] LOG:  could not bind IPv6 address "::1": Address already in use
+2019-09-04 21:48:15.792 KST [71138] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2019-09-04 21:48:15.793 KST [71138] WARNING:  could not create listen socket for "localhost"
+2019-09-04 21:48:15.793 KST [71138] FATAL:  could not create any TCP/IP sockets
+2019-09-04 21:48:15.793 KST [71138] LOG:  database system is shut down
+2019-09-11 02:35:10.656 KST [57311] FATAL:  lock file "postmaster.pid" already exists
+2019-09-11 02:35:10.656 KST [57311] HINT:  Is another postmaster (PID 56580) running in data directory "/usr/local/var/nbb"?
+2019-09-11 02:35:18.570 KST [57352] FATAL:  lock file "postmaster.pid" already exists
+2019-09-11 02:35:18.570 KST [57352] HINT:  Is another postmaster (PID 56580) running in data directory "/usr/local/var/nbb"?
+2019-09-25 21:16:46.108 KST [3641] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-09-25 21:16:46.108 KST [3641] LOG:  listening on IPv6 address "::1", port 5432
+2019-09-25 21:16:46.109 KST [3641] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-09-25 21:16:46.128 KST [3642] LOG:  database system was shut down at 2019-09-25 20:56:52 KST
+2019-09-25 21:16:46.142 KST [3641] LOG:  database system is ready to accept connections

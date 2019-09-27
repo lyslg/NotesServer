@@ -12,6 +12,7 @@ const typeorm_1 = require("typeorm");
 const recipe_1 = require("./schemas/recipe");
 const rate_1 = require("./schemas/rate");
 const user_1 = require("./schemas/user");
+const post_1 = require("./schemas/post");
 // import { Mall } from "./schemas/appsync/mall";
 // import { Supplier } from "./schemas/appsync/supplier";
 // import { Product } from "./schemas/appsync/product";
@@ -21,6 +22,7 @@ function seedDatabase() {
         const recipeRepository = typeorm_1.getRepository(recipe_1.Recipe);
         const ratingsRepository = typeorm_1.getRepository(rate_1.Rate);
         const userRepository = typeorm_1.getRepository(user_1.User);
+        const postRepository = typeorm_1.getRepository(post_1.Post);
         // const mallRepository = getRepository(Mall);
         // const supplierRepository = getRepository(Supplier);
         // const productRepository = getRepository(Product);
@@ -30,6 +32,17 @@ function seedDatabase() {
             password: "s3cr3tp4ssw0rd",
         });
         yield userRepository.save(defaultUser);
+        const posts = postRepository.create([
+            {
+                title: "title1",
+                comment: "comment1",
+            },
+            {
+                title: "title2",
+                comment: "comment2",
+            },
+        ]);
+        yield postRepository.save(posts);
         const [recipe1, recipe2] = recipeRepository.create([
             {
                 title: "Recipe 1",

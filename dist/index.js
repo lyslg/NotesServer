@@ -24,6 +24,7 @@ const helpers_1 = require("./helpers");
 const connection_1 = require("./connection");
 const recipe_resolver_1 = require("./resolvers/recipe.resolver");
 const rate_resolver_1 = require("./resolvers/rate.resolver");
+const post_resolver_1 = require("./resolvers/post-resolver");
 // register 3rd party IOC container
 TypeORM.useContainer(typedi_1.Container);
 function bootstrap() {
@@ -34,7 +35,7 @@ function bootstrap() {
             const { defaultUser } = yield helpers_1.seedDatabase();
             // build TypeGraphQL executable schema
             const schema = yield TypeGraphQL.buildSchema({
-                resolvers: [recipe_resolver_1.RecipeResolver, rate_resolver_1.RateResolver],
+                resolvers: [recipe_resolver_1.RecipeResolver, rate_resolver_1.RateResolver, post_resolver_1.PostResolver],
                 container: typedi_1.Container,
                 emitSchemaFile: {
                     path: 'emit.graphql'

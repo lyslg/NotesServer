@@ -17,7 +17,7 @@
     "schema-ts": "file:../schema-ts",
     "type-graphql": "^0.17.4",
     "typedi": "^0.8.0",
-    "typeorm": "^0.2.18",
+    "typeorm": "^0.2.19",
     "typeorm-typedi-extensions": "^0.2.3"
   },
   "devDependencies": {

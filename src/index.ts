@@ -8,6 +8,7 @@ import { seedDatabase } from "./helpers";
 import { connection } from "./connection";
 import { RecipeResolver } from "./resolvers/recipe.resolver";
 import { RateResolver } from "./resolvers/rate.resolver";
+import { PostResolver } from "./resolvers/post-resolver";
 
 export interface Context {
   // user: User;
@@ -26,7 +27,7 @@ async function bootstrap() {
 
     // build TypeGraphQL executable schema
     const schema = await TypeGraphQL.buildSchema({
-      resolvers: [RecipeResolver, RateResolver],
+      resolvers: [RecipeResolver, RateResolver, PostResolver],
       container: Container,
       emitSchemaFile: {
         path: 'emit.graphql'

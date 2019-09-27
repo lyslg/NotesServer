@@ -5,6 +5,7 @@ import { Rate } from "./schemas/rate";
 import { User } from "./schemas/user";
 
 import { } from 'schema-ts';
+import { Post } from "./schemas/post";
 // import { Mall } from "./schemas/appsync/mall";
 // import { Supplier } from "./schemas/appsync/supplier";
 // import { Product } from "./schemas/appsync/product";
@@ -14,6 +15,7 @@ export async function seedDatabase() {
   const recipeRepository = getRepository(Recipe);
   const ratingsRepository = getRepository(Rate);
   const userRepository = getRepository(User);
+  const postRepository = getRepository(Post);
   // const mallRepository = getRepository(Mall);
   // const supplierRepository = getRepository(Supplier);
   // const productRepository = getRepository(Product);
@@ -24,6 +26,18 @@ export async function seedDatabase() {
     password: "s3cr3tp4ssw0rd",
   });
   await userRepository.save(defaultUser);
+
+  const posts = postRepository.create([
+    {
+      title: "title1",
+      comment: "comment1",
+    },
+    {
+      title: "title2",
+      comment: "comment2",
+    },
+  ])
+  await postRepository.save(posts)
 
   const [recipe1, recipe2] = recipeRepository.create([
     {
